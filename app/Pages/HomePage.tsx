@@ -8,9 +8,9 @@ const HomePage = () => {
   return (
     <div>
       <Main />
-      <Serivces />
       <AboutYoga />
       <AboutMe />
+      <Serivces />
     </div>
   );
 };

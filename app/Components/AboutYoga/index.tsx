@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const AboutYoga = () => {
   return (
-    <section className="bg-gradient-to-b from-green-500 via-green-600 to-green-700 py-20 px-16 flex flex-col justify-center items-center text-white overflow-hidden">
+    <section className="bg-gradient-to-br from-green-400 to-lime-600 py-20 px-16 flex flex-col justify-center items-center gap-16 text-white">
       <div className="flex flex-col items-center">
         <div className="flex flex-col md:flex-row justify-around items-center">
           <div className="w-full md:w-1/2 text-center md:text-left">
