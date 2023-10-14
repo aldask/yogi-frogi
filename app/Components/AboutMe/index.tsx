@@ -1,22 +1,24 @@
 import React from "react";
 import Image from "next/image";
 
-const AboutYoga = () => {
+const AboutMe = () => {
   return (
     <section className="bg-gradient-to-b from-green-500 via-green-600 to-green-700 py-20 px-16 flex flex-col justify-center items-center text-white overflow-hidden">
       <div className="flex flex-col items-center">
         <div className="flex flex-col md:flex-row justify-around items-center">
           <div className="w-full md:w-1/2 text-center md:text-left">
             <div className="font-bold text-4xl mb-8 md:text-5xl">
-              Apie Jogą 🧘
+              Labas, Aš Karolina! 👋
             </div>
             <p className="text-sm md:text-lg text-center md:text-left text-white mb-8 md:mb-0">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed
-              placeat rerum commodi ut. Rerum qui consequuntur ea provident
-              repellendus nam tempore soluta rem distinctio, numquam, architecto
-              maxime odio illo? Exercitationem, blanditiis? Natus dolorum odit
-              vero autem velit excepturi, inventore, in, molestiae commodi
-              reprehenderit hic similique.
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Obcaecati maxime vel magnam ipsa id perspiciatis velit facilis
+              quas minus ea eos, adipisci sint repellendus corporis numquam
+              consectetur dolores dolore quia provident ab beatae
+              necessitatibus? Beatae veniam eveniet assumenda adipisci. Quod
+              assumenda alias velit ad consequuntur iusto debitis itaque ducimus
+              quia, repudiandae iste quo earum magni reiciendis, eum facere
+              fugiat eos illum. Sapiente.
             </p>
           </div>
           <div className="relative rounded-lg overflow-hidden">
@@ -33,4 +35,4 @@ const AboutYoga = () => {
   );
 };
 
-export default AboutYoga;
+export default AboutMe;

@@ -2,9 +2,9 @@ import React from "react";
 
 const Services = () => {
   return (
-    <section className="bg-gradient-to-br from-green-400 to-lime-600 py-20 px-16 flex flex-col justify-center items-center gap-16 text-white shadow-lg">
-      <div className="flex flex-col gap-8 items-center">
-        <div className="font-bold text-4xl md:text-5xl">Paslaugos</div>
+    <section className="bg-gradient-to-br from-green-400 to-lime-600 py-20 px-16 flex flex-col justify-center items-center gap-16 text-white">
+      <div className="flex flex-col items-center">
+        <div className="font-bold text-4xl mb-8 md:text-5xl">Paslaugos</div>
         <p className="text-sm md:text-lg text-center text-white w-full md:w-4/5">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas aliquid
           atque distinctio, perspiciatis recusandae aperiam. Earum blanditiis
