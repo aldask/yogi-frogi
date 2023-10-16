@@ -1,8 +1,8 @@
 import React from "react";
 import Main from "../Components/Hero/index";
-import Serivces from "../Components/Services";
-import AboutYoga from "../Components/AboutYoga";
 import AboutMe from "../Components/AboutMe";
+import AboutYoga from "../Components/AboutYoga";
+import Serivces from "../Components/Services";
 import ContactsFooter from "../Components/ContactsFooter";
 
 const HomePage = () => {
@@ -10,8 +10,8 @@ const HomePage = () => {
     <div>
       <Main />
       <div className="bg-gradient-to-br from-green-400 to-lime-600">
-        <AboutYoga />
         <AboutMe />
+        <AboutYoga />
         <Serivces />
       </div>
       <ContactsFooter />

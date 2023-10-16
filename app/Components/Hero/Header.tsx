@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import "../animations.css";
 
 interface HeaderProps {
   showElement: boolean;
@@ -7,7 +8,7 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ showElement }) => {
   return (
-    <div className="mb-10">
+    <div className={`mb-10 ${showElement ? "invisible" : "pulse-animation"}`}>
       <Image
         src="/Images/Logo/logo.png"
         alt="Yogi.Frogi.Logo"
