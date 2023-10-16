@@ -2,7 +2,7 @@ import React from "react";
 
 const Services = () => {
   return (
-    <section className="bg-gradient-to-br from-green-400 to-lime-600 py-16 px-8 md:px-14 flex flex-col justify-center items-center gap-16 text-white">
+    <section className="py-16 px-8 md:px-14 flex flex-col justify-center items-center gap-16 text-white">
       <div className="flex flex-col items-center">
         <div className="font-bold text-4xl mb-8 md:text-5xl">Paslaugos</div>
         <p className="text-sm md:text-lg text-center text-white w-full md:w-4/5">

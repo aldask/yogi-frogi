@@ -9,9 +9,11 @@ const HomePage = () => {
   return (
     <div>
       <Main />
-      <AboutYoga />
-      <AboutMe />
-      <Serivces />
+      <div className="bg-gradient-to-br from-green-400 to-lime-600">
+        <AboutYoga />
+        <AboutMe />
+        <Serivces />
+      </div>
       <ContactsFooter />
     </div>
   );
