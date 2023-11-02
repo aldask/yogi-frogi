@@ -4,6 +4,7 @@ import AboutMe from "../Components/AboutMe";
 import AboutYoga from "../Components/AboutYoga";
 import Serivces from "../Components/Services";
 import ContactsFooter from "../Components/ContactsFooter";
+import Frog from "../Components/Frog";
 
 const HomePage = () => {
   return (
@@ -15,6 +16,7 @@ const HomePage = () => {
         <Serivces />
       </div>
       <ContactsFooter />
+      <Frog />
     </div>
   );
 };
