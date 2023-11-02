@@ -23,49 +23,51 @@ interface PositionFromCenter {
 }
 
 const Frog: React.FC = () => {
-  const root = document.documentElement;
-
-  const w: WindowDimensions = {
-    height: window.innerHeight,
-    width: window.innerWidth,
-  };
-
-  const setCustomProps = (e: MouseEvent | TouchEvent) => {
-    const clientX =
-      "touches" in e
-        ? (e.touches[0] as Touch).clientX
-        : (e as MouseEvent).clientX;
-    const clientY =
-      "touches" in e
-        ? (e.touches[0] as Touch).clientY
-        : (e as MouseEvent).clientY;
-
-    const pos: Position = {
-      left: clientX / w.width,
-      top: clientY / w.height,
-    };
-
-    const scale: Scale = {
-      x: `${1 - Math.abs(w.width / 2 - clientX) / w.width}`,
-      y: `${1 - Math.abs(w.width / 2 - clientY) / w.height}`,
-    };
-
-    const posFromCenter: PositionFromCenter = {
-      x: (w.width / 2 - clientX) / (w.width / 2),
-      y: (w.height / 2 - clientY) / (w.height / 2),
-    };
-
-    root.style.setProperty("--pos-x", String(pos.left));
-    root.style.setProperty("--pos-y", String(pos.top));
-    root.style.setProperty("--pos-x-from-center", String(posFromCenter.x));
-    root.style.setProperty("--pos-y-from-center", String(posFromCenter.y));
-    root.style.setProperty("--scale-x", scale.x);
-  };
-
   useEffect(() => {
+    const root = document.documentElement;
+
+    const setCustomProps = (e: MouseEvent | TouchEvent) => {
+      const w: WindowDimensions = {
+        height: window.innerHeight,
+        width: window.innerWidth,
+      };
+
+      const clientX =
+        "touches" in e
+          ? (e.touches[0] as Touch).clientX
+          : (e as MouseEvent).clientX;
+      const clientY =
+        "touches" in e
+          ? (e.touches[0] as Touch).clientY
+          : (e as MouseEvent).clientY;
+
+      const pos: Position = {
+        left: clientX / w.width,
+        top: clientY / w.height,
+      };
+
+      const scale: Scale = {
+        x: `${1 - Math.abs(w.width / 2 - clientX) / w.width}`,
+        y: `${1 - Math.abs(w.height / 2 - clientY) / w.height}`,
+      };
+
+      const posFromCenter: PositionFromCenter = {
+        x: (w.width / 2 - clientX) / (w.width / 2),
+        y: (w.height / 2 - clientY) / (w.height / 2),
+      };
+
+      root.style.setProperty("--pos-x", String(pos.left));
+      root.style.setProperty("--pos-y", String(pos.top));
+      root.style.setProperty("--pos-x-from-center", String(posFromCenter.x));
+      root.style.setProperty("--pos-y-from-center", String(posFromCenter.y));
+      root.style.setProperty("--scale-x", scale.x);
+    };
+
     const handleResize = () => {
-      w.height = window.innerHeight;
-      w.width = window.innerWidth;
+      const w: WindowDimensions = {
+        height: window.innerHeight,
+        width: window.innerWidth,
+      };
     };
 
     window.addEventListener("resize", handleResize);
