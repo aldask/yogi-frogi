@@ -1,34 +1,43 @@
-import React from "react";
-import Image from "next/image";
+"use client";
+import React, { useRef, useState, useEffect } from "react";
+import AboutYogaBox from "./AboutYogaBox";
+import "../animations.css";
 
-const AboutYoga = () => {
+const AboutYoga: React.FC = () => {
+  const sectionRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+          } else {
+            setIsVisible(false);
+          }
+        });
+      },
+      {
+        root: null,
+        threshold: 0,
+      }
+    );
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
   return (
-    <section className="bg-gradient-to-br from-green-400 to-lime-600 py-16 px-8 md:px-14 flex flex-col justify-center items-center gap-16 text-white">
-      <div className="flex flex-col items-center">
-        <div className="flex flex-col md:flex-row justify-around items-center">
-          <div className="w-full md:w-1/2 text-center md:text-left">
-            <div className="font-bold text-4xl mb-8 md:text-5xl">
-              Apie Jogą 🧘
-            </div>
-            <p className="text-sm md:text-lg text-center md:text-left text-white mb-8 md:mb-0">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed
-              placeat rerum commodi ut. Rerum qui consequuntur ea provident
-              repellendus nam tempore soluta rem distinctio, numquam, architecto
-              maxime odio illo? Exercitationem, blanditiis? Natus dolorum odit
-              vero autem velit excepturi, inventore, in, molestiae commodi
-              reprehenderit hic similique.
-            </p>
-          </div>
-          <div className="relative rounded-lg overflow-hidden">
-            <Image
-              src="/Images/ContentImgs/test.jpg"
-              alt="Apie-Joga"
-              width={350}
-              height={350}
-            />
-          </div>
-        </div>
-      </div>
+    <section
+      ref={sectionRef}
+      className="py-16 px-8 md:px-14 flex flex-col justify-center items-center gap-16 text-white"
+    >
+      <AboutYogaBox isVisible={isVisible} />
     </section>
   );
 };

@@ -7,6 +7,7 @@ import {
   FaYoutube,
   FaEnvelope,
 } from "react-icons/fa";
+import "../animations.css";
 
 const ContactsFooter = () => {
   return (
@@ -47,7 +48,10 @@ const ContactsFooter = () => {
           </li>
           <li className="flex flex-row gap-2 items-center font-semibold">
             <FaFacebook />{" "}
-            <a href="https://www.facebook.com" target="_blank">
+            <a
+              href="https://facebook.com/profile.php?id=100095017083224"
+              target="_blank"
+            >
               Facebook
             </a>
           </li>
@@ -64,6 +68,7 @@ const ContactsFooter = () => {
             </a>
           </li>
         </ul>
+        <ul className="flex flex-col m-3"></ul>
       </div>
     </section>
   );

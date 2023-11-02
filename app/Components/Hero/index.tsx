@@ -1,23 +1,37 @@
-import React from "react";
-import Image from "next/image";
+"use client";
+import React, { useState, useEffect } from "react";
+import Header from "./Header";
+import Button from "./Button";
 
 const Main = () => {
+  const [showElement, setShowElement] = useState(false);
+
+  const changeClass = () => {
+    const windowHeight = window.innerHeight;
+    const scrollValue = document.documentElement.scrollTop;
+
+    const scrollThreshold = windowHeight * 0.99;
+
+    if (scrollValue > scrollThreshold) {
+      setShowElement(true);
+    } else {
+      setShowElement(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", changeClass);
+
+    return () => {
+      window.removeEventListener("scroll", changeClass);
+    };
+  }, []);
+
   return (
-    <section className="min-h-screen mt-0 mb-auto pb-7 overflow-hidden flex flex-col bg-zinc-300 items-center justify-center">
+    <section className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-gray-100 to-gray-400 text-white">
       <div className="flex flex-col items-center">
-        <div className="mb-25 mb-10">
-          <Image
-            src="/Images/Logo/logo.png"
-            alt="Yogi.Frogi.Logo"
-            width={700}
-            height={700}
-          />
-        </div>
-        <div>
-          <button className="bg-gradient-to-br from-green-500 to-lime-900 text-white font-bold py-2 px-6 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transform transition duration-300 ease-in-out hover:scale-105 shadow-md md:py-4 md:px-8 md:text-lg">
-            Daugiau
-          </button>
-        </div>
+        <Header showElement={showElement} />
+        <Button showElement={showElement} />
       </div>
     </section>
   );
