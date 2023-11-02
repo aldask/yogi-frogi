@@ -20,7 +20,7 @@ const AboutMe: React.FC = () => {
       },
       {
         root: null,
-        threshold: 0.5,
+        threshold: 0,
       }
     );
 
