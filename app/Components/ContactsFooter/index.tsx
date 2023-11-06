@@ -7,68 +7,87 @@ import {
   FaYoutube,
   FaEnvelope,
 } from "react-icons/fa";
-import "../animations.css";
 
 const ContactsFooter = () => {
   return (
-    <section className="bg-gradient-to-br from-lime-800 to-black py-16 px-8 md:px-14 flex flex-col justify-center items-center gap-16 text-white">
-      <div className="w-full flex flex-row flex-wrap justify-evenly gap-2">
-        <ul className="flex flex-col m-3">
-          <li>
-            <p className="mb-5 font-extrabold text-2xl">Navigacija</p>
-          </li>
-          <li className="font-semibold">
-            <Link href="/">Viršus</Link>
-          </li>
-          <li className="font-semibold">
-            <Link href="/">Apie Mane</Link>
-          </li>
-          <li className="font-semibold">
-            <Link href="/">Apie Jogą</Link>
-          </li>
-          <li className="font-semibold">
-            <Link href="/">Informacija</Link>
-          </li>
-        </ul>
-        <ul className="flex flex-col m-3">
-          <li>
-            <p className="mb-5 font-extrabold text-2xl">Kontaktai</p>
-          </li>
-          <li className="flex flex-row gap-2 items-center font-semibold">
-            <FaPhone /> <a href="tel:861111111">+370 611 11111</a>
-          </li>
-          <li className="flex flex-row gap-2 items-center font-semibold">
-            <FaEnvelope />{" "}
-            <a href="mailto:elpastas@gmail.com">elpastas@gmail.com</a>
-          </li>{" "}
-        </ul>
-        <ul className="flex flex-col m-3">
-          <li>
-            <p className="mb-5 font-extrabold text-2xl">Socialiniai tinklai</p>
-          </li>
-          <li className="flex flex-row gap-2 items-center font-semibold">
-            <FaFacebook />{" "}
-            <a
-              href="https://facebook.com/profile.php?id=100095017083224"
-              target="_blank"
-            >
-              Facebook
-            </a>
-          </li>
-          <li className="flex flex-row gap-2 items-center font-semibold">
-            <FaInstagram />{" "}
-            <a href="https://www.instagram.com " target="_blank">
-              Instagram
-            </a>
-          </li>
-          <li className="flex flex-row gap-2 items-center font-semibold">
-            <FaYoutube />{" "}
-            <a href="https://www.youtube.com/channel" target="_blank">
-              YouTube
-            </a>
-          </li>
-        </ul>
-        <ul className="flex flex-col m-3"></ul>
+    <section className="bg-gradient-to-br from-lime-800 to-black py-20 px-8 md:px-16 flex flex-col justify-center items-center gap-10 md:gap-16 text-white">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16">
+        <div className="flex flex-col items-start">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-8">
+            Meniu
+          </h2>
+          <Link
+            href="/"
+            className="text-lg font-semibold text-gray-300 hover:text-blue-400 transition duration-300 mb-4 block transform hover:scale-105"
+          >
+            Grįžti į viršų
+          </Link>
+          <Link
+            href="/"
+            className="text-lg font-semibold text-gray-300 hover:text-blue-400 transition duration-300 mb-4 block transform hover:scale-105"
+          >
+            Apie Mane
+          </Link>
+          <Link
+            href="/"
+            className="text-lg font-semibold text-gray-300 hover:text-blue-400 transition duration-300 mb-4 block transform hover:scale-105"
+          >
+            Apie Jogą
+          </Link>
+          <Link
+            href="/"
+            className="text-lg font-semibold text-gray-300 hover:text-blue-400 transition duration-300 mb-4 block transform hover:scale-105"
+          >
+            Informacija
+          </Link>
+        </div>
+        <div className="flex flex-col items-start">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-8">
+            Kontaktai
+          </h2>
+          <a
+            href="tel:+37068194588"
+            className="flex items-center text-lg font-semibold text-gray-300 hover:text-blue-400 transition duration-300 mb-4 transform hover:scale-105"
+          >
+            <FaPhone className="mr-3" />
+            +370 681 94588
+          </a>
+          <a
+            href="mailto:yogifrogi.lt@gmail.com"
+            className="flex items-center text-lg font-semibold text-gray-300 hover:text-blue-400 transition duration-300 mb-4 transform hover:scale-105"
+          >
+            <FaEnvelope className="mr-3" /> yogifrogi.lt@gmail.com
+          </a>
+        </div>
+        <div className="flex flex-col items-start">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-8">
+            Socialiniai tinklai
+          </h2>
+          <a
+            href="https://facebook.com/profile.php?id=100095017083224"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center text-lg font-semibold text-gray-300 hover:text-blue-400 transition duration-300 mb-4 transform hover:scale-105"
+          >
+            <FaFacebook className="mr-3" /> Facebook
+          </a>
+          <a
+            href="https://www.instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center text-lg font-semibold text-gray-300 hover:text-blue-400 transition duration-300 mb-4 transform hover:scale-105"
+          >
+            <FaInstagram className="mr-3" /> Instagram
+          </a>
+          <a
+            href="https://www.youtube.com/channel"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center text-lg font-semibold text-gray-300 hover:text-blue-400 transition duration-300 mb-4 transform hover:scale-105"
+          >
+            <FaYoutube className="mr-3" /> YouTube
+          </a>
+        </div>
       </div>
     </section>
   );
