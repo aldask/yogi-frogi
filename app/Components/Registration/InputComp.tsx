@@ -1,4 +1,4 @@
-import React from "react";
+import React, {ChangeEvent} from "react";
 
 interface InputProps {
   label: string;
@@ -10,6 +10,7 @@ interface InputProps {
   minLength?: number;
   maxLength?: number;
   pattern?: string;
+  value?: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
@@ -24,6 +25,7 @@ const InputComp: React.FC<InputProps> = (inputProps) => {
     minLength,
     maxLength,
     pattern,
+    value,
     onChange,
   } = inputProps;
 
@@ -39,6 +41,7 @@ const InputComp: React.FC<InputProps> = (inputProps) => {
         minLength={minLength}
         maxLength={maxLength}
         pattern={pattern}
+        value={value}
         onChange={onChange}
       />
     </>
