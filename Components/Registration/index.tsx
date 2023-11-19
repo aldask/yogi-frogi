@@ -4,12 +4,12 @@ import emailjs, { EmailJSResponseStatus } from "@emailjs/browser";
 import InputComp from "./InputComp";
 
 interface Inputs {
-  userName: string;
-  userSurname: string;
-  userEmail: string;
-  userTel: string;
-  userKid: string;
-  userDate: string;
+  fatherName: string;
+  fatherSurname: string;
+  fatherEmail: string;
+  fatherTel: string;
+  kidName: string;
+  kidBirthDate: string;
 }
 
 const Reg: React.FC = () => {
@@ -22,12 +22,12 @@ const Reg: React.FC = () => {
 
   const formRef = useRef<HTMLFormElement>(null);
   const [inputs, setInputs] = useState<Inputs>({
-    userName: "",
-    userSurname: "",
-    userEmail: "",
-    userTel: "",
-    userKid: "",
-    userDate: "",
+    fatherName: "",
+    fatherSurname: "",
+    fatherEmail: "",
+    fatherTel: "",
+    kidName: "",
+    kidBirthDate: "",
   });
   const [error, setError] = useState<boolean>(false);
   const [success, setSuccess] = useState<boolean>(false);
@@ -41,12 +41,12 @@ const Reg: React.FC = () => {
     e.preventDefault();
 
     const regexPatterns: Record<string, RegExp> = {
-      userName: /^[a-zA-Z]+$/,
-      userSurname: /^[a-zA-Z]+$/,
-      userEmail: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/,
-      userTel: /^\+370\d{8,}$/,
-      userKid: /^[a-zA-Z]+$/,
-      userDate: /^\d{4}-\d{2}-\d{2}$/,
+      fatherName: /^[a-zA-Z]+$/,
+      fatherSurname: /^[a-zA-Z]+$/,
+      fatherEmail: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/,
+      fatherTel: /^\+370\d{8,}$/,
+      kidName: /^[a-zA-Z]+$/,
+      kidBirthDate: /^\d{4}-\d{2}-\d{2}$/,
     };
 
     const isInputsValid = Object.keys(inputs).every(
@@ -75,12 +75,12 @@ const Reg: React.FC = () => {
             setError(false);
             setSuccess(true);
             setInputs({
-              userName: "",
-              userSurname: "",
-              userEmail: "",
-              userTel: "",
-              userKid: "",
-              userDate: "",
+              fatherName: "",
+              fatherSurname: "",
+              fatherEmail: "",
+              fatherTel: "",
+              kidName: "",
+              kidBirthDate: "",
             });
           },
           (error: EmailJSResponseStatus) => {
@@ -131,17 +131,17 @@ const Reg: React.FC = () => {
         <InputComp
           label="Vieno iš tėvų Vardas"
           type="text"
-          name="userName"
+          name="fatherName"
           className={`border-2 border-green-600 text-gray-800 rounded-md py-2 px-4 w-full my-2 focus:outline-none focus:ring focus:border-blue-300 placeholder-gray-500 ${
-            inputs.userName ? "" : "border-gray-400"
+            inputs.fatherName ? "" : "border-gray-400"
           }`}
           placeholder="Vardas"
           minLength={2}
           maxLength={40}
-          value={inputs.userName}
+          value={inputs.fatherName}
           onChange={handleInputChange}
         />
-        {error && inputs.userName === "" && (
+        {error && inputs.fatherName === "" && (
           <p className="text-[#f54747] text-md mb-2 font-semibold">
             Klaida! Įrašykite savo vardą
           </p>
@@ -149,17 +149,17 @@ const Reg: React.FC = () => {
         <InputComp
           label="Pavardė"
           type="text"
-          name="userSurname"
+          name="fatherSurname"
           className={`bg-green border-2 border-green-600 text-gray-800 rounded-md py-2 px-4 w-full my-2 focus:outline-none focus:ring focus:border-blue-300 placeholder-gray-500 ${
-            inputs.userSurname ? "" : "border-gray-400"
+            inputs.fatherSurname ? "" : "border-gray-400"
           }`}
           placeholder="Pavardė"
           minLength={2}
           maxLength={40}
-          value={inputs.userSurname}
+          value={inputs.fatherSurname}
           onChange={handleInputChange}
         />
-        {error && inputs.userSurname === "" && (
+        {error && inputs.fatherSurname === "" && (
           <p className="text-[#f54747] text-md mb-2 font-semibold">
             Klaida! Įrašykite savo pavardę
           </p>
@@ -167,17 +167,17 @@ const Reg: React.FC = () => {
         <InputComp
           label="Jūsų el. paštas"
           type="email"
-          name="userEmail"
+          name="fatherEmail"
           className={`bg-green border-2 border-green-600 text-gray-800 rounded-md py-2 px-4 w-full my-2 focus:outline-none focus:ring focus:border-blue-300 placeholder-gray-500 ${
-            inputs.userEmail ? "" : "border-gray-400"
+            inputs.fatherEmail ? "" : "border-gray-400"
           }`}
           placeholder="El. Paštas"
           minLength={2}
           maxLength={40}
-          value={inputs.userEmail}
+          value={inputs.fatherEmail}
           onChange={handleInputChange}
         />
-        {error && inputs.userEmail === "" && (
+        {error && inputs.fatherEmail === "" && (
           <p className="text-[#f54747] text-md mb-2 font-semibold">
             Klaida! Įrašykite savo el. paštą
           </p>
@@ -185,17 +185,17 @@ const Reg: React.FC = () => {
         <InputComp
           label="Jūsų telefono numeris"
           type="tel"
-          name="userTel"
+          name="fatherTel"
           className={`bg-green border-2 border-green-600 text-gray-800 rounded-md py-2 px-4 w-full my-2 focus:outline-none focus:ring focus:border-blue-300 placeholder-gray-500 ${
-            inputs.userTel ? "" : "border-gray-400"
+            inputs.fatherTel ? "" : "border-gray-400"
           }`}
           placeholder="+370..."
-          minLength={2}
-          maxLength={40}
-          value={inputs.userTel}
+          minLength={12}
+          maxLength={12}
+          value={inputs.fatherTel}
           onChange={handleInputChange}
         />
-        {error && inputs.userTel === "" && (
+        {error && inputs.fatherTel === "" && (
           <p className="text-[#f54747] text-md mb-2 font-semibold">
             Klaida! Įrašykite savo telefono numerį
           </p>
@@ -203,17 +203,17 @@ const Reg: React.FC = () => {
         <InputComp
           label="Jūsų vaiko vardas"
           type="text"
-          name="userKid"
+          name="kidName"
           className={`bg-green border-2 border-green-600 text-gray-800 rounded-md py-2 px-4 w-full my-2 focus:outline-none focus:ring focus:border-blue-300 placeholder-gray-500 ${
-            inputs.userKid ? "" : "border-gray-400"
+            inputs.kidName ? "" : "border-gray-400"
           }`}
           placeholder="Vaiko vardas"
           minLength={2}
           maxLength={40}
-          value={inputs.userKid}
+          value={inputs.kidName}
           onChange={handleInputChange}
         />
-        {error && inputs.userKid === "" && (
+        {error && inputs.kidName === "" && (
           <p className="text-[#f54747] text-md mb-2 font-semibold">
             Klaida! Įrašykite savo vaiko vardą
           </p>
@@ -221,17 +221,15 @@ const Reg: React.FC = () => {
         <InputComp
           label="Jūsų vaiko amžius"
           type="date"
-          name="userDate"
+          name="kidBirthDate"
           className={`bg-green border-2 border-green-600 text-gray-800 rounded-md py-2 px-4 w-full my-2 focus:outline-none focus:ring focus:border-blue-300 placeholder-gray-500 ${
-            inputs.userDate ? "" : "border-gray-400"
+            inputs.kidBirthDate ? "" : "border-gray-400"
           }`}
           placeholder="Pasirinkite gimimo data"
-          minLength={2}
-          maxLength={40}
-          value={inputs.userDate}
+          value={inputs.kidBirthDate}
           onChange={handleInputChange}
         />
-        {error && inputs.userDate === "" && (
+        {error && inputs.kidBirthDate === "" && (
           <p className="text-[#f54747] text-md mb-2 font-semibold">
             Klaida! Pasirinkite savo vaiko gimimo datą
           </p>
