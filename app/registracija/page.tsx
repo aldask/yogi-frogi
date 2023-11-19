@@ -1,10 +1,12 @@
 import ContactsFooter from "@/Components/ContactsFooter";
 import Frog from "@/Components/Frog";
-import Reg from "@/Components/Registration/Reg";
+import Navbar from "@/Components/Nav/Nav";
+import Reg from "@/Components/Registration";
 
 const RegPage = () => {
   return (
     <div>
+      <Navbar />
       <Reg />
       <Frog />
       <ContactsFooter />
