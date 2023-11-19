@@ -51,6 +51,7 @@ const Reg: React.FC = () => {
       fatherTel: /^\+370\d{8,}$/,
       kidName: /^[a-zA-Z]+$/,
       kidBirthDate: /^\d{4}-\d{2}-\d{2}$/,
+      message: /^[\s\S]*$/,
     };
 
     const isInputsValid = Object.keys(inputs).every(
