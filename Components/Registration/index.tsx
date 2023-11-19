@@ -205,7 +205,7 @@ const Reg: React.FC = () => {
             Klaida! Įrašykite savo telefono numerį
           </p>
         )}
-        {error && inputs.fatherTel.length < 12 && (
+        {error && inputs.fatherTel !== "" && inputs.fatherTel.length < 12 && (
           <p className="text-[#f54747] text-md mb-2 font-semibold">
             Klaida! Trūksta skaičių
           </p>
