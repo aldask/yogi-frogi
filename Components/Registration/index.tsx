@@ -187,6 +187,13 @@ const Reg: React.FC = () => {
             Klaida! Įrašykite savo el. paštą
           </p>
         )}
+        {error &&
+          inputs.fatherEmail !== "" &&
+          inputs.fatherEmail.length < 12 && (
+            <p className="text-[#f54747] text-md mb-2 font-semibold">
+              Klaida! Įveskite tikrą el. pašto adresą
+            </p>
+          )}
         <InputComp
           label="Jūsų telefono numeris"
           type="tel"
