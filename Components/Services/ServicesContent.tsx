@@ -5,7 +5,7 @@ const ServicesContent: React.FC = () => {
   return (
     <>
       <div className="flex flex-col items-center">
-        <div className="headerWrapper font-bold text-4xl mb-8 md:text-5xl">
+        <div className="headerWrapper font-bold text-3xl mb-8 md:text-5xl">
           Paslaugos
         </div>
         <p className="textWrapper text-sm md:text-lg text-center text-white w-full md:w-4/5">
