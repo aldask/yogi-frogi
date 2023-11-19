@@ -72,6 +72,7 @@ const Reg: React.FC = () => {
         )
         .then(
           (result: EmailJSResponseStatus) => {
+            setError(false);
             setSuccess(true);
             setInputs({
               userName: "",
@@ -118,12 +119,12 @@ const Reg: React.FC = () => {
         className="imageWrapper bg-gray-600 p-6 rounded-md shadow-lg w-full md:w-1/2"
       >
         {error && (
-          <p className="text-red-500 text-lg mb-2">
+          <p className="text-[#f54747] text-2xl mb-2 font-semibold">
             Visi laukai turi būti užpildyti!
           </p>
         )}
         {success && (
-          <p className="text-green-500 text-lg mb-2">
+          <p className="text-green-500 text-2xl mb-2 font-semibold">
             Jūsų registracija sėkminga!
           </p>
         )}
@@ -141,7 +142,7 @@ const Reg: React.FC = () => {
           onChange={handleInputChange}
         />
         {error && inputs.userName === "" && (
-          <p className="text-red-500 text-sm mb-2">
+          <p className="text-[#f54747] text-md mb-2 font-semibold">
             Klaida! Įrašykite savo vardą
           </p>
         )}
@@ -159,7 +160,7 @@ const Reg: React.FC = () => {
           onChange={handleInputChange}
         />
         {error && inputs.userSurname === "" && (
-          <p className="text-red-500 text-sm mb-2">
+          <p className="text-[#f54747] text-md mb-2 font-semibold">
             Klaida! Įrašykite savo pavardę
           </p>
         )}
@@ -177,7 +178,7 @@ const Reg: React.FC = () => {
           onChange={handleInputChange}
         />
         {error && inputs.userEmail === "" && (
-          <p className="text-red-500 text-sm mb-2">
+          <p className="text-[#f54747] text-md mb-2 font-semibold">
             Klaida! Įrašykite savo el. paštą
           </p>
         )}
@@ -195,7 +196,7 @@ const Reg: React.FC = () => {
           onChange={handleInputChange}
         />
         {error && inputs.userTel === "" && (
-          <p className="text-red-500 text-sm mb-2">
+          <p className="text-[#f54747] text-md mb-2 font-semibold">
             Klaida! Įrašykite savo telefono numerį
           </p>
         )}
@@ -213,7 +214,7 @@ const Reg: React.FC = () => {
           onChange={handleInputChange}
         />
         {error && inputs.userKid === "" && (
-          <p className="text-red-500 text-sm mb-2">
+          <p className="text-[#f54747] text-md mb-2 font-semibold">
             Klaida! Įrašykite savo vaiko vardą
           </p>
         )}
@@ -231,11 +232,17 @@ const Reg: React.FC = () => {
           onChange={handleInputChange}
         />
         {error && inputs.userDate === "" && (
-          <p className="text-red-500 text-sm mb-2">
+          <p className="text-[#f54747] text-md mb-2 font-semibold">
             Klaida! Pasirinkite savo vaiko gimimo datą
           </p>
         )}
-
+        <label className="text-lg font-semibold">
+          Papildoma informacija ar klausimai
+        </label>
+        <textarea
+          name="message"
+          className="bg-green border-2 border-green-600 text-gray-800 rounded-md py-2 px-4 w-full my-2 focus:outline-none focus:ring focus:border-blue-300 placeholder-gray-500"
+        />
         <button
           type="submit"
           className="bg-gradient-to-br from-green-400 to-lime-500 text-white my-2 font-bold py-2 px-6 md:py-4 md:px-8 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transform transition duration-300 ease-in-out hover:scale-105"

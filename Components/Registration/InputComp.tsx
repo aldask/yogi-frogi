@@ -31,7 +31,7 @@ const InputComp: React.FC<InputProps> = (inputProps) => {
 
   return (
     <>
-      <label>{label}</label>
+      <label className="text-lg font-semibold">{label}</label>
       <input
         type={type}
         name={name}
