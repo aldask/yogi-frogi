@@ -10,6 +10,7 @@ interface Inputs {
   fatherTel: string;
   kidName: string;
   kidBirthDate: string;
+  message: string;
 }
 
 const Reg: React.FC = () => {
@@ -28,11 +29,14 @@ const Reg: React.FC = () => {
     fatherTel: "",
     kidName: "",
     kidBirthDate: "",
+    message: "",
   });
   const [error, setError] = useState<boolean>(false);
   const [success, setSuccess] = useState<boolean>(false);
 
-  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (
+    e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setInputs({ ...inputs, [name]: value });
   };
@@ -81,6 +85,7 @@ const Reg: React.FC = () => {
               fatherTel: "",
               kidName: "",
               kidBirthDate: "",
+              message: "",
             });
           },
           (error: EmailJSResponseStatus) => {
@@ -239,6 +244,8 @@ const Reg: React.FC = () => {
         </label>
         <textarea
           name="message"
+          value={inputs.message}
+          onChange={handleInputChange}
           className="bg-green border-2 border-green-600 text-gray-800 rounded-md py-2 px-4 w-full my-2 focus:outline-none focus:ring focus:border-blue-300 placeholder-gray-500"
         />
         <button
