@@ -1,0 +1,66 @@
+:root {
+  --animation-duration: 1s;
+  --bounce-curve: cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.pulse-animation {
+  animation: pulse 1.5s infinite ease-in-out;
+  animation-delay: 3s;
+}
+
+.headerWrapper {
+  animation: bounceInLeft var(--animation-duration) var(--bounce-curve);
+}
+
+.textWrapper {
+  animation: bounceIn var(--animation-duration) var(--bounce-curve);
+}
+
+.imageWrapper {
+  animation: fadeIn var(--animation-duration);
+}
+
+@keyframes bounceInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px) rotate(-10deg) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) rotate(0deg) scale(1);
+  }
+}
+
+@keyframes bounceIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.01);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
