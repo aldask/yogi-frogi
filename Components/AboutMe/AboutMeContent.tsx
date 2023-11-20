@@ -5,7 +5,7 @@ const AboutMeContent: React.FC = () => {
   return (
     <>
       <div className="w-full md:w-1/2 text-center md:text-left">
-        <div className="headerWrapper font-bold text-4xl mb-8 md:text-5xl">
+        <div className="headerWrapper font-bold text-3xl mb-8 md:text-5xl">
           <h2 className="mb-2">Labas,</h2>
           <h2>Aš Karolina! 👋</h2>
         </div>
@@ -21,7 +21,7 @@ const AboutMeContent: React.FC = () => {
       </div>
       <div className="imageWrapper relative rounded-lg overflow-hidden">
         <Image
-          src="/Images/ContentImgs/test.jpg"
+          src="/Images/test.jpg"
           alt="Apie-Joga"
           width={350}
           height={350}

@@ -18,25 +18,25 @@ const ContactsFooter = () => {
           </h2>
           <Link
             href="/"
-            className="text-lg font-semibold text-gray-300 hover:text-blue-400 transition duration-300 mb-4 block transform hover:scale-105"
+            className="text-lg font-semibold text-gray-300 hover:text-yellow-500 transition duration-300 mb-4 block transform hover:scale-105"
           >
             Grįžti į viršų
           </Link>
           <Link
             href="/"
-            className="text-lg font-semibold text-gray-300 hover:text-blue-400 transition duration-300 mb-4 block transform hover:scale-105"
+            className="text-lg font-semibold text-gray-300 hover:text-yellow-500 transition duration-300 mb-4 block transform hover:scale-105"
           >
             Apie Mane
           </Link>
           <Link
             href="/"
-            className="text-lg font-semibold text-gray-300 hover:text-blue-400 transition duration-300 mb-4 block transform hover:scale-105"
+            className="text-lg font-semibold text-gray-300 hover:text-yellow-500 transition duration-300 mb-4 block transform hover:scale-105"
           >
             Apie Jogą
           </Link>
           <Link
             href="/"
-            className="text-lg font-semibold text-gray-300 hover:text-blue-400 transition duration-300 mb-4 block transform hover:scale-105"
+            className="text-lg font-semibold text-gray-300 hover:text-yellow-500 transition duration-300 mb-4 block transform hover:scale-105"
           >
             Informacija
           </Link>
@@ -47,14 +47,14 @@ const ContactsFooter = () => {
           </h2>
           <a
             href="tel:+37068194588"
-            className="flex items-center text-lg font-semibold text-gray-300 hover:text-blue-400 transition duration-300 mb-4 transform hover:scale-105"
+            className="flex items-center text-lg font-semibold text-gray-300 hover:text-yellow-500 transition duration-300 mb-4 transform hover:scale-105"
           >
             <FaPhone className="mr-3" />
             +370 681 94588
           </a>
           <a
             href="mailto:yogifrogi.lt@gmail.com"
-            className="flex items-center text-lg font-semibold text-gray-300 hover:text-blue-400 transition duration-300 mb-4 transform hover:scale-105"
+            className="flex items-center text-lg font-semibold text-gray-300 hover:text-yellow-500 transition duration-300 mb-4 transform hover:scale-105"
           >
             <FaEnvelope className="mr-3" /> yogifrogi.lt@gmail.com
           </a>
@@ -67,7 +67,7 @@ const ContactsFooter = () => {
             href="https://facebook.com/profile.php?id=100095017083224"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center text-lg font-semibold text-gray-300 hover:text-blue-400 transition duration-300 mb-4 transform hover:scale-105"
+            className="flex items-center text-lg font-semibold text-gray-300 hover:text-yellow-500 transition duration-300 mb-4 transform hover:scale-105"
           >
             <FaFacebook className="mr-3" /> Facebook
           </a>
@@ -75,7 +75,7 @@ const ContactsFooter = () => {
             href="https://www.instagram.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center text-lg font-semibold text-gray-300 hover:text-blue-400 transition duration-300 mb-4 transform hover:scale-105"
+            className="flex items-center text-lg font-semibold text-gray-300 hover:text-yellow-500 transition duration-300 mb-4 transform hover:scale-105"
           >
             <FaInstagram className="mr-3" /> Instagram
           </a>
@@ -83,7 +83,7 @@ const ContactsFooter = () => {
             href="https://www.youtube.com/channel"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center text-lg font-semibold text-gray-300 hover:text-blue-400 transition duration-300 mb-4 transform hover:scale-105"
+            className="flex items-center text-lg font-semibold text-gray-300 hover:text-yellow-500 transition duration-300 mb-4 transform hover:scale-105"
           >
             <FaYoutube className="mr-3" /> YouTube
           </a>

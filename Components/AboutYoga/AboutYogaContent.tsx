@@ -4,16 +4,16 @@ import Image from "next/image";
 const AboutYogaContent: React.FC = () => {
   return (
     <>
-      <div className="imageWrapper relative rounded-lg overflow-hidden">
+      <div className="imageWrapper relative rounded-lg overflow-hidden mb-8 md:mb-0">
         <Image
-          src="/Images/ContentImgs/test.jpg"
+          src="/Images/test.jpg"
           alt="Apie-Joga"
           width={350}
           height={350}
         />
       </div>
       <div className="w-full md:w-1/2 text-center md:text-left">
-        <div className="headerWrapper font-bold text-4xl mb-8 md:text-5xl">
+        <div className="headerWrapper font-bold text-3xl mb-8 md:text-5xl">
           Apie Jogą 🧘
         </div>
         <p className="textWrapper text-sm md:text-lg text-center md:text-left text-white mb-8 md:mb-0">
