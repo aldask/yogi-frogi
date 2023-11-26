@@ -11,7 +11,7 @@ export default function Home() {
     <main>
       <Navbar />
       <Main />
-      <div className="bg-gradient-to-br from-green-700 to-lime-900 bg-blend-soft-light bg-opacity-80 shadow-lg transition-all duration-500">
+      <div className="bg-gradient-to-tl from-emerald-600 to-yellow-600">
         <AboutMe />
         <AboutYoga />
         <Services />
