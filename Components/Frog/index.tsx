@@ -81,42 +81,51 @@ const Frog: React.FC = () => {
     };
   }, []);
 
+  const toTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
-    <div className="frog">
-      <div className="body"></div>
-      <div className="arm left">
-        <div className="hand">
-          <div className="finger"></div>
-          <div className="finger"></div>
-          <div className="finger"></div>
-        </div>
-      </div>
-      <div className="arm right">
-        <div className="hand">
-          <div className="finger"></div>
-          <div className="finger"></div>
-          <div className="finger"></div>
-        </div>
-      </div>
-      <div className="leg left">
-        <div className="foot"></div>
-      </div>
-      <div className="leg right">
-        <div className="foot"></div>
-      </div>
-      <div className="head">
-        <div className="eyes">
-          <div className="eye left">
-            <div className="eyeball">
-              <div className="pupil"></div>
-            </div>
-            <div className="eyelid"></div>
+    <div onClick={toTop} className="cursor-pointer">
+      <div className="frog">
+        <div className="body"></div>
+        <div className="arm left">
+          <div className="hand">
+            <div className="finger"></div>
+            <div className="finger"></div>
+            <div className="finger"></div>
           </div>
-          <div className="eye right">
-            <div className="eyeball">
-              <div className="pupil"></div>
+        </div>
+        <div className="arm right">
+          <div className="hand">
+            <div className="finger"></div>
+            <div className="finger"></div>
+            <div className="finger"></div>
+          </div>
+        </div>
+        <div className="leg left">
+          <div className="foot"></div>
+        </div>
+        <div className="leg right">
+          <div className="foot"></div>
+        </div>
+        <div className="head">
+          <div className="eyes">
+            <div className="eye left">
+              <div className="eyeball">
+                <div className="pupil"></div>
+              </div>
+              <div className="eyelid"></div>
             </div>
-            <div className="eyelid"></div>
+            <div className="eye right">
+              <div className="eyeball">
+                <div className="pupil"></div>
+              </div>
+              <div className="eyelid"></div>
+            </div>
           </div>
         </div>
       </div>
