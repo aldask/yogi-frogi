@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect } from "react";
 import "./frog_style.css";
-import Link from "next/link";
 
 interface WindowDimensions {
   height: number;
@@ -82,8 +81,15 @@ const Frog: React.FC = () => {
     };
   }, []);
 
+  const toTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
-    <Link href="/">
+    <button onClick={toTop}>
       <div className="frog">
         <div className="body"></div>
         <div className="arm left">
@@ -123,7 +129,7 @@ const Frog: React.FC = () => {
           </div>
         </div>
       </div>
-    </Link>
+    </button>
   );
 };
 
