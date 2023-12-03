@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Header from "./Header";
 import Button from "./Button";
+import PhotoCarousel from "../PhotoCarousel";
 
 const Main = () => {
   const [showElement, setShowElement] = useState(false);
@@ -27,12 +28,17 @@ const Main = () => {
     };
   }, []);
 
+  const images = [
+    { src: "test.jpg", alt: "Image 1" },
+    { src: "test3.jpg", alt: "Image 2" },
+  ];
+
   return (
     <section className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-gray-100 to-gray-400 text-white">
-      <div className="flex flex-col items-center">
+      <PhotoCarousel images={images}>
         <Header showElement={showElement} />
         <Button showElement={showElement} />
-      </div>
+      </PhotoCarousel>
     </section>
   );
 };
