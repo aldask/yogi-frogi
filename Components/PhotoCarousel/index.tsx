@@ -16,7 +16,7 @@ const PhotoCarousel: React.FC<PhotoCarouselProps> = ({ images, children }) => {
   };
 
   useEffect(() => {
-    const slideInterval = setInterval(nextSlide, 3000);
+    const slideInterval = setInterval(nextSlide, 7000);
 
     return () => {
       clearInterval(slideInterval);
@@ -33,7 +33,7 @@ const PhotoCarousel: React.FC<PhotoCarouselProps> = ({ images, children }) => {
           objectFit="cover"
           height={0}
           unoptimized={true}
-          className={`absolute top-0 left-0 w-full h-full duration-500 ${
+          className={`absolute top-0 left-0 w-full h-full duration-1000 ${
             index === currentSlide
               ? "opacity-100 grayscale blur-sm"
               : "opacity-0"
