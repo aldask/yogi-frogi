@@ -89,7 +89,7 @@ const Frog: React.FC = () => {
   };
 
   return (
-    <button onClick={toTop}>
+    <div onClick={toTop} className="cursor-pointer">
       <div className="frog">
         <div className="body"></div>
         <div className="arm left">
@@ -129,7 +129,7 @@ const Frog: React.FC = () => {
           </div>
         </div>
       </div>
-    </button>
+    </div>
   );
 };
 
