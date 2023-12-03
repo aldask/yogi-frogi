@@ -263,7 +263,7 @@ const Reg: React.FC = () => {
         />
         <button
           type="submit"
-          className="bg-gradient-to-br from-green-400 to-lime-500 text-white my-2 font-bold py-2 px-6 md:py-4 md:px-8 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transform transition duration-300 ease-in-out hover:scale-105"
+          className="bg-gradient-to-br from-green-400 to-lime-600 text-white my-2 font-bold py-2 px-6 md:py-4 md:px-8 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transform transition duration-300 ease-in-out hover:scale-105"
         >
           Siųsti
         </button>
