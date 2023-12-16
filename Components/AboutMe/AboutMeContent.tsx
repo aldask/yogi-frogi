@@ -1,7 +1,12 @@
 import React from "react";
-import Image from "next/image";
+import PhotoCarousel from "../PhotoCarousel";
 
 const AboutMeContent: React.FC = () => {
+  const images = [
+    { src: "test.jpg", alt: "Image 1" },
+    { src: "test3.jpg", alt: "Image 2" },
+  ];
+
   return (
     <>
       <div className="w-full md:w-1/2 text-center md:text-left">
@@ -19,13 +24,14 @@ const AboutMeContent: React.FC = () => {
           reiciendis, eum facere fugiat eos illum. Sapiente.
         </p>
       </div>
-      <div className="imageWrapper relative rounded-lg overflow-hidden">
-        <Image
-          src="/Images/test.jpg"
-          alt="Apie-Joga"
-          width={350}
-          height={350}
-        />
+      <div className="w-full md:w-1/2 h-full">
+        <div className="imageWrapper relative rounded-lg h-96">
+          <PhotoCarousel
+            images={images}
+            slideInterval={7000}
+            animationDuration="1000"
+          />
+        </div>
       </div>
     </>
   );

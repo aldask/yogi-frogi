@@ -4,9 +4,18 @@ import Image from "next/image";
 interface PhotoCarouselProps {
   children?: ReactNode;
   images: { src: string; alt: string }[];
+  slideInterval: number;
+  effect?: string;
+  animationDuration: string;
 }
 
-const PhotoCarousel: React.FC<PhotoCarouselProps> = ({ images, children }) => {
+const PhotoCarousel: React.FC<PhotoCarouselProps> = ({
+  images,
+  children,
+  slideInterval,
+  effect,
+  animationDuration,
+}) => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const nextSlide = () => {
@@ -16,12 +25,12 @@ const PhotoCarousel: React.FC<PhotoCarouselProps> = ({ images, children }) => {
   };
 
   useEffect(() => {
-    const slideInterval = setInterval(nextSlide, 7000);
+    const interval = setInterval(nextSlide, slideInterval);
 
     return () => {
-      clearInterval(slideInterval);
+      clearInterval(interval);
     };
-  }, [currentSlide]);
+  }, [currentSlide, slideInterval]);
 
   return (
     <>
@@ -33,10 +42,8 @@ const PhotoCarousel: React.FC<PhotoCarouselProps> = ({ images, children }) => {
           objectFit="cover"
           height={0}
           unoptimized={true}
-          className={`absolute top-0 left-0 w-full h-full duration-1000 ${
-            index === currentSlide
-              ? "opacity-100 grayscale blur-sm"
-              : "opacity-0"
+          className={`relative w-full h-full duration-${animationDuration} ${
+            index === currentSlide ? `opacity-100 ${effect}` : `opacity-0`
           }`}
         />
       ))}

@@ -35,7 +35,12 @@ const Main = () => {
 
   return (
     <section className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-gray-100 to-gray-400 text-white">
-      <PhotoCarousel images={images}>
+      <PhotoCarousel
+        images={images}
+        slideInterval={7000}
+        animationDuration="1000"
+        effect="grayscale blur-sm"
+      >
         <Header showElement={showElement} />
         <Button showElement={showElement} />
       </PhotoCarousel>
