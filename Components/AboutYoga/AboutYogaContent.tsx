@@ -14,7 +14,7 @@ const AboutYogaContent: React.FC = () => {
           <PhotoCarousel
             images={images}
             slideInterval={7000}
-            animationDuration="1000"
+            animationDuration={1000}
           />
         </div>
       </div>
