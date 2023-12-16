@@ -1,30 +1,36 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Header from "./Header";
 import Button from "./Button";
 import PhotoCarousel from "../PhotoCarousel";
 
 const Main = () => {
-  const [showElement, setShowElement] = useState(false);
-
-  const changeClass = () => {
-    const windowHeight = window.innerHeight;
-    const scrollValue = document.documentElement.scrollTop;
-
-    const scrollThreshold = windowHeight * 0.99;
-
-    if (scrollValue > scrollThreshold) {
-      setShowElement(true);
-    } else {
-      setShowElement(false);
-    }
-  };
+  const sectionRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    window.addEventListener("scroll", changeClass);
-
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+          } else {
+            setIsVisible(false);
+          }
+        });
+      },
+      {
+        root: null,
+        threshold: 0,
+      }
+    );
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
     return () => {
-      window.removeEventListener("scroll", changeClass);
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
     };
   }, []);
 
@@ -34,15 +40,18 @@ const Main = () => {
   ];
 
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-gray-100 to-gray-400 text-white">
+    <section
+      ref={sectionRef}
+      className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-gray-100 to-gray-400 text-white"
+    >
       <PhotoCarousel
         images={images}
         slideInterval={7000}
-        animationDuration="1000"
+        animationDuration={1000}
         effect="grayscale blur-sm"
       >
-        <Header showElement={showElement} />
-        <Button showElement={showElement} />
+        <Header isVisible={isVisible} />
+        <Button isVisible={isVisible} />
       </PhotoCarousel>
     </section>
   );
