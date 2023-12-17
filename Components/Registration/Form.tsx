@@ -20,7 +20,7 @@ const Form = () => {
   const EMAILJS_API_KEY = process.env
     .NEXT_PUBLIC_REACT_APP_EMAILJS_API_KEY as string;
 
-  const formRef = useRef<HTMLFormElement>(null);
+  const formRef = useRef(null);
   const [inputs, setInputs] = useState<Inputs>({
     fatherName: "",
     fatherSurname: "",
@@ -30,8 +30,8 @@ const Form = () => {
     kidBirthDate: "",
     message: "",
   });
-  const [error, setError] = useState<boolean>(false);
-  const [success, setSuccess] = useState<boolean>(false);
+  const [error, setError] = useState(false);
+  const [success, setSuccess] = useState(false);
 
   const handleInputChange = (
     e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>
@@ -59,7 +59,11 @@ const Form = () => {
 
     const isInputsValid = Object.keys(inputs).every(
       (key) =>
-        (key !== "message" && inputs[key as keyof Inputs].trim() !== "") ||
+        (key !== "message" &&
+          inputs[key as keyof Inputs].trim() !== "" &&
+          regexPatterns[key as keyof Inputs].test(
+            inputs[key as keyof Inputs]
+          )) ||
         (key === "message" && messageTest)
     );
 
