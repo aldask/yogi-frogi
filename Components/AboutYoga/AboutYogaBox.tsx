@@ -5,7 +5,7 @@ const AboutYogaBox: React.FC<{ isVisible: boolean }> = ({ isVisible }) => {
   return (
     <div className={isVisible ? "flex" : "hidden"}>
       <div className="flex flex-col items-center">
-        <div className="flex flex-col md:flex-row justify-around items-center">
+        <div className="flex flex-col md:flex-row justify-around items-center gap-10">
           <AboutYogaContent />
         </div>
       </div>

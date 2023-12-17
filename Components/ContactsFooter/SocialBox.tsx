@@ -13,15 +13,15 @@ const SocialBox = () => {
         icon={<FaFacebook className="mr-3" />}
       />
       <SocialLink
-        href="https://www.instagram.com"
+        href="https://instagram.com/yogi.frogi"
         text="Instagram"
         icon={<FaInstagram className="mr-3" />}
       />
-      <SocialLink
-        href="https://www.youtube.com/channel"
+      {/* <SocialLink
+        href="https://youtube.com/channel"
         text="YouTube"
         icon={<FaYoutube className="mr-3" />}
-      />
+      /> */}
     </div>
   );
 };
