@@ -11,11 +11,7 @@ const AboutYogaContent: React.FC = () => {
     <>
       <div className="w-full md:w-1/2 h-full">
         <div className="imageWrapper relative rounded-lg h-96">
-          <PhotoCarousel
-            images={images}
-            slideInterval={7000}
-            animationDuration={1000}
-          />
+          <PhotoCarousel images={images} slideInterval={3500} />
         </div>
       </div>
       <div className="w-full md:w-1/2 text-center md:text-left">

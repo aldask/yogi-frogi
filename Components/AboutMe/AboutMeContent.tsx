@@ -26,11 +26,7 @@ const AboutMeContent: React.FC = () => {
       </div>
       <div className="w-full md:w-1/2 h-full">
         <div className="imageWrapper relative rounded-lg h-96">
-          <PhotoCarousel
-            images={images}
-            slideInterval={2000}
-            animationDuration={1000}
-          />
+          <PhotoCarousel images={images} slideInterval={2000} />
         </div>
       </div>
     </>

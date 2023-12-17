@@ -47,7 +47,6 @@ const Main = () => {
       <PhotoCarousel
         images={images}
         slideInterval={7000}
-        animationDuration={1000}
         effect="grayscale blur-sm"
       >
         <Header isVisible={isVisible} />

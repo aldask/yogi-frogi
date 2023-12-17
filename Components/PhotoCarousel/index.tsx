@@ -6,7 +6,6 @@ interface PhotoCarouselProps {
   images: { src: string; alt: string }[];
   slideInterval: number;
   effect?: string;
-  animationDuration: number;
 }
 
 const PhotoCarousel: React.FC<PhotoCarouselProps> = ({
@@ -14,7 +13,6 @@ const PhotoCarousel: React.FC<PhotoCarouselProps> = ({
   children,
   slideInterval,
   effect,
-  animationDuration,
 }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -42,12 +40,9 @@ const PhotoCarousel: React.FC<PhotoCarouselProps> = ({
           objectFit="cover"
           height={0}
           unoptimized={true}
-          className={`relative w-full h-full duration-${animationDuration} ${
+          className={`relative w-full h-full duration-1000 ${
             index === currentSlide ? `opacity-100 ${effect}` : "opacity-0"
           }`}
-          // className={`relative w-full h-full duration-${animationDuration} ${
-          //   index === currentSlide ? `opacity-100 ${effect}` : "opacity-0"
-          // }`}
         />
       ))}
       {children}
