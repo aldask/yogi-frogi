@@ -51,13 +51,15 @@ const Reg: React.FC = () => {
       fatherTel: /^\+370\d{8,}$/,
       kidName: /^[a-zA-Z]+$/,
       kidBirthDate: /^\d{4}-\d{2}-\d{2}$/,
-      message: /^[\s\S]*$/,
     };
 
     const isInputsValid = Object.keys(inputs).every(
       (key) =>
-        inputs[key as keyof Inputs].trim() !== "" &&
-        regexPatterns[key].test(inputs[key as keyof Inputs])
+        key !== "message" ||
+        inputs[key as keyof Inputs].trim() !== "" ||
+        true ||
+        (inputs[key as keyof Inputs].trim() !== "" &&
+          regexPatterns[key].test(inputs[key as keyof Inputs]))
     );
 
     if (formRef.current) {
@@ -88,10 +90,12 @@ const Reg: React.FC = () => {
               kidBirthDate: "",
               message: "",
             });
+            console.log("ok");
           },
           (error: EmailJSResponseStatus) => {
             setError(true);
             setSuccess(false);
+            console.log("not ok");
           }
         );
     }
@@ -131,7 +135,7 @@ const Reg: React.FC = () => {
         )}
         {success && (
           <p className="text-green-500 text-2xl mb-2 font-semibold">
-            Jūsų registracija sėkminga!
+            Jūsų registracija sėkminga! Netrukus susisieksime
           </p>
         )}
         <InputComp
@@ -148,8 +152,13 @@ const Reg: React.FC = () => {
           onChange={handleInputChange}
         />
         {error && inputs.fatherName === "" && (
-          <p className="text-[#f54747] text-md mb-2 font-semibold">
+          <p className="text-[#fa7676] text-md mb-2 font-semibold">
             Klaida! Įrašykite savo vardą
+          </p>
+        )}
+        {error && inputs.fatherName !== "" && inputs.fatherName.length < 3 && (
+          <p className="text-[#fa7676] text-md mb-2 font-semibold">
+            Klaida! Vardas per trumpas
           </p>
         )}
         <InputComp
@@ -166,10 +175,17 @@ const Reg: React.FC = () => {
           onChange={handleInputChange}
         />
         {error && inputs.fatherSurname === "" && (
-          <p className="text-[#f54747] text-md mb-2 font-semibold">
+          <p className="text-[#fa7676] text-md mb-2 font-semibold">
             Klaida! Įrašykite savo pavardę
           </p>
         )}
+        {error &&
+          inputs.fatherSurname !== "" &&
+          inputs.fatherSurname.length < 3 && (
+            <p className="text-[#fa7676] text-md mb-2 font-semibold">
+              Klaida! Pavardė per trumpa
+            </p>
+          )}
         <InputComp
           label="Jūsų el. paštas"
           type="email"
@@ -184,14 +200,14 @@ const Reg: React.FC = () => {
           onChange={handleInputChange}
         />
         {error && inputs.fatherEmail === "" && (
-          <p className="text-[#f54747] text-md mb-2 font-semibold">
-            Klaida! Įrašykite savo el. paštą
+          <p className="text-[#fa7676] text-md mb-2 font-semibold">
+            Klaida! Įrašykite savo el. aštą
           </p>
         )}
         {error &&
           inputs.fatherEmail !== "" &&
           inputs.fatherEmail.length < 12 && (
-            <p className="text-[#f54747] text-md mb-2 font-semibold">
+            <p className="text-[#fa7676] text-md mb-2 font-semibold">
               Klaida! Įveskite tikrą el. pašto adresą
             </p>
           )}
@@ -209,12 +225,12 @@ const Reg: React.FC = () => {
           onChange={handleInputChange}
         />
         {error && inputs.fatherTel === "" && (
-          <p className="text-[#f54747] text-md mb-2 font-semibold">
+          <p className="text-[#fa7676] text-md mb-2 font-semibold">
             Klaida! Įrašykite savo telefono numerį
           </p>
         )}
         {error && inputs.fatherTel !== "" && inputs.fatherTel.length < 12 && (
-          <p className="text-[#f54747] text-md mb-2 font-semibold">
+          <p className="text-[#fa7676] text-md mb-2 font-semibold">
             Klaida! Trūksta skaičių
           </p>
         )}
@@ -232,12 +248,17 @@ const Reg: React.FC = () => {
           onChange={handleInputChange}
         />
         {error && inputs.kidName === "" && (
-          <p className="text-[#f54747] text-md mb-2 font-semibold">
+          <p className="text-[#fa7676] text-md mb-2 font-semibold">
             Klaida! Įrašykite savo vaiko vardą
           </p>
         )}
+        {error && inputs.kidName !== "" && inputs.kidName.length < 3 && (
+          <p className="text-[#fa7676] text-md mb-2 font-semibold">
+            Klaida! Vardas per trumpas
+          </p>
+        )}
         <InputComp
-          label="Jūsų vaiko amžius"
+          label="Jūsų vaiko gimimo data"
           type="date"
           name="kidBirthDate"
           className={`bg-green border-2 border-green-600 text-gray-800 rounded-md py-2 px-4 w-full my-2 focus:outline-none focus:ring focus:border-blue-300 placeholder-gray-500 ${
@@ -248,7 +269,7 @@ const Reg: React.FC = () => {
           onChange={handleInputChange}
         />
         {error && inputs.kidBirthDate === "" && (
-          <p className="text-[#f54747] text-md mb-2 font-semibold">
+          <p className="text-[#fa7676] text-md mb-2 font-semibold">
             Klaida! Pasirinkite savo vaiko gimimo datą
           </p>
         )}
