@@ -34,6 +34,7 @@ const AboutYoga: React.FC = () => {
   }, []);
   return (
     <section
+      id="apie-joga"
       ref={sectionRef}
       className="pt-16 md:py-16 px-8 md:px-14 flex flex-col justify-center items-center gap-16 text-white"
     >
