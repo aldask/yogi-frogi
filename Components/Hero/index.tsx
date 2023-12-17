@@ -41,6 +41,7 @@ const Main = () => {
 
   return (
     <section
+      id="hero"
       ref={sectionRef}
       className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-gray-100 to-gray-400 text-white"
     >
