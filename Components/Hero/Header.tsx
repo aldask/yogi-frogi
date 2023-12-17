@@ -3,22 +3,18 @@ import Image from "next/image";
 import "../animations.css";
 
 interface HeaderProps {
-  showElement: boolean;
+  isVisible: boolean;
 }
 
-const Header: React.FC<HeaderProps> = ({ showElement }) => {
+const Header: React.FC<HeaderProps> = ({ isVisible }) => {
   return (
-    <div className={`mb-10 ${showElement ? "invisible" : "pulse-animation"}`}>
+    <div className={`mb-10 ${isVisible ? "flex fade-down" : "hidden"}`}>
       <Image
         src="/Images/Logo/logo.png"
         alt="Yogi.Frogi.Logo"
         width={650}
         height={650}
-        className={
-          showElement
-            ? "invisible"
-            : "animate-fade-down animate-duration-1000 ease-in-out"
-        }
+        className={isVisible ? "flex pulse-animation" : "hidden"}
       />
     </div>
   );

@@ -1,16 +1,18 @@
 import React from "react";
-import Image from "next/image";
+import PhotoCarousel from "../PhotoCarousel";
 
 const AboutYogaContent: React.FC = () => {
+  const images = [
+    { src: "test.jpg", alt: "Image 1" },
+    { src: "test3.jpg", alt: "Image 2" },
+  ];
+
   return (
     <>
-      <div className="imageWrapper relative rounded-lg overflow-hidden mb-8 md:mb-0">
-        <Image
-          src="/Images/test.jpg"
-          alt="Apie-Joga"
-          width={350}
-          height={350}
-        />
+      <div className="w-full md:w-1/2 h-full">
+        <div className="imageWrapper relative rounded-lg h-96">
+          <PhotoCarousel images={images} slideInterval={3500} />
+        </div>
       </div>
       <div className="w-full md:w-1/2 text-center md:text-left">
         <div className="headerWrapper font-bold text-3xl mb-8 md:text-5xl">
