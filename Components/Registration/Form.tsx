@@ -50,15 +50,17 @@ const Form = () => {
       fatherTel: /^\+370\d{8,}$/,
       kidName: /^[a-zA-Z]+$/,
       kidBirthDate: /^\d{4}-\d{2}-\d{2}$/,
+      message: /^[\s\S]*$/,
     };
+
+    const messageTest =
+      inputs.message.trim() === "" ||
+      regexPatterns.message.test(inputs.message);
 
     const isInputsValid = Object.keys(inputs).every(
       (key) =>
-        key !== "message" ||
-        inputs[key as keyof Inputs].trim() !== "" ||
-        true ||
-        (inputs[key as keyof Inputs].trim() !== "" &&
-          regexPatterns[key].test(inputs[key as keyof Inputs]))
+        (key !== "message" && inputs[key as keyof Inputs].trim() !== "") ||
+        (key === "message" && messageTest)
     );
 
     if (formRef.current) {
@@ -254,6 +256,7 @@ const Form = () => {
         name="message"
         value={inputs.message}
         onChange={handleInputChange}
+        placeholder="Rašyti čia"
         className="bg-green border-2 border-green-600 text-gray-800 rounded-md py-2 px-4 w-full my-2 focus:outline-none focus:ring focus:border-blue-300 placeholder-gray-500"
       />
       <button
